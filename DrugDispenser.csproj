@@ -1,0 +1,1069 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CC87130A-D6F8-4FD3-8F3E-81B93F44E0AB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DrugDispenser</RootNamespace>
+    <AssemblyName>DrugDispenser</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.7.2\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ReportViewerForMvc, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ReportViewerForMvc.1.1.1\lib\net45\ReportViewerForMvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AssessmentController.cs" />
+    <Compile Include="Controllers\AssessmentOpioidDependenceController.cs" />
+    <Compile Include="Controllers\AssessmentPriorityChecklistController.cs" />
+    <Compile Include="Controllers\AssessmentQuestionsController.cs" />
+    <Compile Include="Controllers\AssessmentVitalsController.cs" />
+    <Compile Include="Controllers\ASSISTANTsController.cs" />
+    <Compile Include="Controllers\ClientController.cs" />
+    <Compile Include="Controllers\FBCTestController.cs" />
+    <Compile Include="Controllers\ClientKitController.cs" />
+    <Compile Include="Controllers\ClientTestController.cs" />
+    <Compile Include="Controllers\ClientTreatmentController.cs" />
+    <Compile Include="Controllers\ConfirmatoryTestController.cs" />
+    <Compile Include="Controllers\DISPENSERsController.cs" />
+    <Compile Include="Controllers\DistrictController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\KITController.cs" />
+    <Compile Include="Controllers\LFTTestController.cs" />
+    <Compile Include="Controllers\MedicineController.cs" />
+    <Compile Include="Controllers\OpioidDependencyController.cs" />
+    <Compile Include="Controllers\PregnancyTestController.cs" />
+    <Compile Include="Controllers\PriorityChecklistController.cs" />
+    <Compile Include="Controllers\QuestionaireController.cs" />
+    <Compile Include="Controllers\BloodBorneDiseaseController.cs" />
+    <Compile Include="Controllers\RapidTestController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
+    <Compile Include="Controllers\SessionAssistantController.cs" />
+    <Compile Include="Controllers\SESSIONsController.cs" />
+    <Compile Include="Controllers\SITEsController.cs" />
+    <Compile Include="Controllers\SubstanceController.cs" />
+    <Compile Include="Controllers\UreaTestController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ClientHelper.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AFTERCARE.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetRole.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUser.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserClaim.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserLogin.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ASSESSMENT.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AssessmentFormViewModel.cs" />
+    <Compile Include="Models\ASSISTANT.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ASS_OPIOIDDEPENDENCY.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ASS_PRIORITYCHECKLIST.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ASS_QUESTIONAIRE.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BLOODBORNEDISEASE.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CLIENT.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CLIENTBLOODBORNEDISEASETEST.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CLIENTCONFIRMATORYTEST.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CLIENTCONFIRMATORYTESTDISEASE.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CLIENTFBCTEST.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CLIENTFBCTESTRESULT.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CLIENTKIT.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CLIENTLFTTEST.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CLIENTLFTTESTRESULT.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CLIENTRAPIDTEST.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CLIENTRAPIDTESTDISEASE.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CLIENTRECORD.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CLIENTSTATU.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CLIENTSUBSTANCETEST.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CLIENTTEST.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ClientTestViewModel.cs" />
+    <Compile Include="Models\CLIENTUREATEST.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CLIENTUREATESTRESULT.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CONFIRMATORYTESTDISEASE.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C__MigrationHistory.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DISPENSER.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DispenserViewModel.cs" />
+    <Compile Include="Models\DISTRICT.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DUMTS.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DUMTS.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DUMTS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DUMTS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DUMTS.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FBC.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_AFTERCARE.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_ASSESSMENT.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_ASSISTANT.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_ASS_OPIOIDDEPENDENCY.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_ASS_PRIORITYCHECKLIST.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_ASS_QUESTIONAIRE.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_BLOODBORNEDISEASE.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_CLIENT.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_CLIENTKIT.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_CLIENTOPIOIDDEPENDENCY.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_CLIENTPRIORITYCHECKLIST.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_CLIENTQUESTIONAIRE.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_CLIENTRECORD.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_CLIENTSTATUS.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_CLIENTSUBSTANCETEST.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_CLIENTTEST.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_DISPENSER.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_DISTRICT.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_KITS.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_MEDICATION.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_MEDICINE.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_OPIOIDDEPENDENCY.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_PREGNANCYTEST.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_PRIORITYCHECKLIST.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_QUESTIONAIRE.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_REGISTRYLOCATION.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_SESSION.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_SESSION_ASSISTANT.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_SITE.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_SUBSTANCE.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_TREATMENT.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_TREATMENTCENTRE.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_TREATMENTOUTCOME.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_TREATMENTPLAN.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HIST_VITALS.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Enums\ApplicationEnums.cs" />
+    <Compile Include="Models\KIT.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LFT.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MEDICATION.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MEDICINE.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OPIOIDDEPENDENCY.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PREGNANCYTEST.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PRIORITYCHECKLIST.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QUESTIONAIRE.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RAPIDTESTDISEASE.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\REGISTRYLOCATION.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SESSION.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SessionViewModel.cs" />
+    <Compile Include="Models\SESSION_ASSISTANT.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SITE.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_AllDataList_Result.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagrams_Result.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SP_PrintBloodBorneTestHistory_Result.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SP_PrintClientMasterList_Result.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_printClientRecord_Result.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SP_PrintDailyDispenserList_Result.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SP_PrintDailyMedicationTotalsWithSite_Result.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SP_PrintDailyMedicationTotals_Result.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SP_PrintPrescription_Result.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SP_PrintSubstanceTestHistory_Result.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SP_PrintTreatmentHistory_Result.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SP_ViewClientHistory_Result.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SUBSTANCE.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\test_Result.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TREATMENT.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TREATMENTCENTRE.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TREATMENTOUTCOME.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TREATMENTPLAN.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TreatmentViewModel.cs" />
+    <Compile Include="Models\UREA.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\USERLOG.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VITAL.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_ALL.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_CLIENT.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_MasterList.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_NPD.cs">
+      <DependentUpon>DUMTS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VW_NPD.Partial.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MDAReports\MDADataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MDADataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CustomContent.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\SideNav.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="DataTables\DataTables-1.10.18\css\dataTables.bootstrap.css" />
+    <Content Include="DataTables\DataTables-1.10.18\css\dataTables.bootstrap.min.css" />
+    <Content Include="DataTables\DataTables-1.10.18\css\dataTables.bootstrap4.css" />
+    <Content Include="DataTables\DataTables-1.10.18\css\dataTables.bootstrap4.min.css" />
+    <Content Include="DataTables\DataTables-1.10.18\css\dataTables.foundation.css" />
+    <Content Include="DataTables\DataTables-1.10.18\css\dataTables.foundation.min.css" />
+    <Content Include="DataTables\DataTables-1.10.18\css\dataTables.jqueryui.css" />
+    <Content Include="DataTables\DataTables-1.10.18\css\dataTables.jqueryui.min.css" />
+    <Content Include="DataTables\DataTables-1.10.18\css\dataTables.semanticui.css" />
+    <Content Include="DataTables\DataTables-1.10.18\css\dataTables.semanticui.min.css" />
+    <Content Include="DataTables\DataTables-1.10.18\css\jquery.dataTables.css" />
+    <Content Include="DataTables\DataTables-1.10.18\css\jquery.dataTables.min.css" />
+    <Content Include="DataTables\DataTables-1.10.18\images\sort_asc.png" />
+    <Content Include="DataTables\DataTables-1.10.18\images\sort_asc_disabled.png" />
+    <Content Include="DataTables\DataTables-1.10.18\images\sort_both.png" />
+    <Content Include="DataTables\DataTables-1.10.18\images\sort_desc.png" />
+    <Content Include="DataTables\DataTables-1.10.18\images\sort_desc_disabled.png" />
+    <Content Include="DataTables\DataTables-1.10.18\js\dataTables.bootstrap.js" />
+    <Content Include="DataTables\DataTables-1.10.18\js\dataTables.bootstrap.min.js" />
+    <Content Include="DataTables\DataTables-1.10.18\js\dataTables.bootstrap4.js" />
+    <Content Include="DataTables\DataTables-1.10.18\js\dataTables.bootstrap4.min.js" />
+    <Content Include="DataTables\DataTables-1.10.18\js\dataTables.foundation.js" />
+    <Content Include="DataTables\DataTables-1.10.18\js\dataTables.foundation.min.js" />
+    <Content Include="DataTables\DataTables-1.10.18\js\dataTables.jqueryui.js" />
+    <Content Include="DataTables\DataTables-1.10.18\js\dataTables.jqueryui.min.js" />
+    <Content Include="DataTables\DataTables-1.10.18\js\dataTables.semanticui.js" />
+    <Content Include="DataTables\DataTables-1.10.18\js\dataTables.semanticui.min.js" />
+    <Content Include="DataTables\DataTables-1.10.18\js\jquery.dataTables.js" />
+    <Content Include="DataTables\DataTables-1.10.18\js\jquery.dataTables.min.js" />
+    <Content Include="DataTables\datatables.css" />
+    <Content Include="DataTables\datatables.js" />
+    <Content Include="DataTables\datatables.min.css" />
+    <Content Include="DataTables\datatables.min.js" />
+    <Content Include="DataTables\Responsive-2.2.2\css\responsive.bootstrap.css" />
+    <Content Include="DataTables\Responsive-2.2.2\css\responsive.bootstrap.min.css" />
+    <Content Include="DataTables\Responsive-2.2.2\css\responsive.bootstrap4.css" />
+    <Content Include="DataTables\Responsive-2.2.2\css\responsive.bootstrap4.min.css" />
+    <Content Include="DataTables\Responsive-2.2.2\css\responsive.dataTables.css" />
+    <Content Include="DataTables\Responsive-2.2.2\css\responsive.dataTables.min.css" />
+    <Content Include="DataTables\Responsive-2.2.2\css\responsive.foundation.css" />
+    <Content Include="DataTables\Responsive-2.2.2\css\responsive.foundation.min.css" />
+    <Content Include="DataTables\Responsive-2.2.2\css\responsive.jqueryui.css" />
+    <Content Include="DataTables\Responsive-2.2.2\css\responsive.jqueryui.min.css" />
+    <Content Include="DataTables\Responsive-2.2.2\css\responsive.semanticui.css" />
+    <Content Include="DataTables\Responsive-2.2.2\css\responsive.semanticui.min.css" />
+    <Content Include="DataTables\Responsive-2.2.2\js\dataTables.responsive.js" />
+    <Content Include="DataTables\Responsive-2.2.2\js\dataTables.responsive.min.js" />
+    <Content Include="DataTables\Responsive-2.2.2\js\responsive.bootstrap.js" />
+    <Content Include="DataTables\Responsive-2.2.2\js\responsive.bootstrap.min.js" />
+    <Content Include="DataTables\Responsive-2.2.2\js\responsive.bootstrap4.js" />
+    <Content Include="DataTables\Responsive-2.2.2\js\responsive.bootstrap4.min.js" />
+    <Content Include="DataTables\Responsive-2.2.2\js\responsive.foundation.js" />
+    <Content Include="DataTables\Responsive-2.2.2\js\responsive.foundation.min.js" />
+    <Content Include="DataTables\Responsive-2.2.2\js\responsive.jqueryui.js" />
+    <Content Include="DataTables\Responsive-2.2.2\js\responsive.jqueryui.min.js" />
+    <Content Include="DataTables\Responsive-2.2.2\js\responsive.semanticui.js" />
+    <Content Include="DataTables\Responsive-2.2.2\js\responsive.semanticui.min.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Images\ajax-loader.gif" />
+    <Content Include="Images\Logo-APDAR.jpg" />
+    <Content Include="Images\Logo-COA.jpg" />
+    <Content Include="Images\Logo-transparent.png" />
+    <Content Include="Models\DUMTS.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DUMTS.edmx</DependentUpon>
+      <LastGenOutput>DUMTS.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DUMTS.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DUMTS.edmx</DependentUpon>
+      <LastGenOutput>DUMTS.cs</LastGenOutput>
+    </Content>
+    <Content Include="ReportViewerWebForm.aspx" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\palette.js" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Chart.js" />
+    <Content Include="Scripts\Chart.min.js" />
+    <Content Include="Scripts\CustomScripts.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="MDAReports\MDADataSet.xsc">
+      <DependentUpon>MDADataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="MDAReports\MDADataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MDADataSet.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="MDAReports\MDADataSet.xss">
+      <DependentUpon>MDADataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="Models\DUMTS.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DUMTS.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DUMTS.edmx.diagram">
+      <DependentUpon>DUMTS.edmx</DependentUpon>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\PublishProfiles\DrugDispenser.pubxml" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
+    <Content Include="Scripts\jquery.maskedinput.js" />
+    <Content Include="Scripts\jquery.maskedinput.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Account\_ChangePassword.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\AssessmentOpioidDependence\_CreateEditAssessmentOpioidDependence.cshtml" />
+    <Content Include="Views\AssessmentOpioidDependence\_Delete.cshtml" />
+    <Content Include="Views\AssessmentOpioidDependence\_Index.cshtml" />
+    <Content Include="Views\AssessmentPriorityChecklist\_CreateEditAssessmentPriorityChecklist.cshtml" />
+    <Content Include="Views\AssessmentPriorityChecklist\_Delete.cshtml" />
+    <Content Include="Views\AssessmentPriorityChecklist\_Index.cshtml" />
+    <Content Include="Views\AssessmentQuestions\_CreateEditAssessmentQuestions.cshtml" />
+    <Content Include="Views\AssessmentQuestions\_Delete.cshtml" />
+    <Content Include="Views\AssessmentQuestions\_Index.cshtml" />
+    <Content Include="Views\AssessmentVitals\_CreateEditAssessmentVitals.cshtml" />
+    <Content Include="Views\AssessmentVitals\_Delete.cshtml" />
+    <Content Include="Views\AssessmentVitals\_Index.cshtml" />
+    <Content Include="Views\Assessment\EditFormDetails.cshtml" />
+    <Content Include="Views\Assessment\Index.cshtml" />
+    <Content Include="Views\Assessment\_CreateEditAssessment.cshtml" />
+    <Content Include="Views\Assessment\_Delete.cshtml" />
+    <Content Include="Views\ClientKit\Index.cshtml" />
+    <Content Include="Views\ClientKit\_Delete.cshtml" />
+    <Content Include="Views\ClientTest\CreateEditClientTest.cshtml" />
+    <Content Include="Views\ClientTest\Index.cshtml" />
+    <Content Include="Views\ClientTest\_Delete.cshtml" />
+    <Content Include="Views\ClientTreatment\CreateEditClientTreatment.cshtml" />
+    <Content Include="Views\ClientTreatment\_ClientTreatmentDetails.cshtml" />
+    <Content Include="Views\ClientTreatment\Index.cshtml" />
+    <Content Include="Views\ClientTreatment\_Delete.cshtml" />
+    <Content Include="Views\KIT\CreateEditKIT.cshtml" />
+    <Content Include="Views\KIT\Index.cshtml" />
+    <Content Include="Views\KIT\_Delete.cshtml" />
+    <Content Include="Views\Medicine\Index.cshtml" />
+    <Content Include="Views\Medicine\_CreateEditMedicine.cshtml" />
+    <Content Include="Views\Medicine\_Delete.cshtml" />
+    <Content Include="Views\OpioidDependency\Index.cshtml" />
+    <Content Include="Views\OpioidDependency\_CreateEditOpioidDependency.cshtml" />
+    <Content Include="Views\OpioidDependency\_Delete.cshtml" />
+    <Content Include="Views\PregnancyTest\Index.cshtml" />
+    <Content Include="Views\PregnancyTest\_CreateEditPregnancyTest.cshtml" />
+    <Content Include="Views\PregnancyTest\_Delete.cshtml" />
+    <Content Include="Views\PriorityChecklist\Index.cshtml" />
+    <Content Include="Views\PriorityChecklist\_CreateEditPriorityChecklist.cshtml" />
+    <Content Include="Views\PriorityChecklist\_Delete.cshtml" />
+    <Content Include="Views\Questionaire\Index.cshtml" />
+    <Content Include="Views\Questionaire\_CreateEditQuestions.cshtml" />
+    <Content Include="Views\Questionaire\_Delete.cshtml" />
+    <Content Include="Views\BloodBorneDisease\Index.cshtml" />
+    <Content Include="Views\BloodBorneDisease\_CreateEditBloodBorneDisease.cshtml" />
+    <Content Include="Views\BloodBorneDisease\_Delete.cshtml" />
+    <Content Include="Views\Substance\Index.cshtml" />
+    <Content Include="Views\Substance\_Delete.cshtml" />
+    <Content Include="Views\Account\RegisteredStaff.cshtml" />
+    <Content Include="Views\Shared\_GlobalModal.cshtml" />
+    <Content Include="Views\ClientKit\CreateEditClientKit.cshtml" />
+    <Content Include="Views\Substance\_CreateEditSubstance.cshtml" />
+    <Content Include="Views\Assessment\FormDetails.cshtml" />
+    <Content Include="Views\AssessmentOpioidDependence\_OpioidDependencePartial.cshtml" />
+    <Content Include="Views\AssessmentQuestions\_AssessmentQuestionsPartial.cshtml" />
+    <Content Include="Views\AssessmentPriorityChecklist\_PriorityChecklistPartial.cshtml" />
+    <Content Include="Views\AssessmentVitals\_AssessmentVitalsPartial.cshtml" />
+    <Content Include="Views\Account\_RegisteredStaffPartial.cshtml" />
+    <Content Include="Views\Account\_ChangeUsersRole.cshtml" />
+    <Content Include="Views\PregnancyTest\_PregnancyTestPartial.cshtml" />
+    <Content Include="Views\ClientTreatment\_ClientTreatmentPartial.cshtml" />
+    <Content Include="Views\ClientTest\_ClientTestPartial.cshtml" />
+    <Content Include="Views\ClientKit\_ClientKitPartial.cshtml" />
+    <Content Include="Views\Reports\_ReportCriteria.cshtml" />
+    <Content Include="Views\Reports\Index.cshtml" />
+    <Content Include="Views\Reports\ReportViewer.cshtml" />
+    <Content Include="Views\Reports\_ClientRecordCriteria.cshtml" />
+    <Content Include="Views\Reports\_MedicationCriteria.cshtml" />
+    <Content Include="Views\Client\_ClientDetails.cshtml" />
+    <Content Include="Views\District\_CreateEditDistrict.cshtml" />
+    <Content Include="Views\District\_Delete.cshtml" />
+    <Content Include="Views\District\Index.cshtml" />
+    <Content Include="Views\Client\_ClientPartial.cshtml" />
+    <Content Include="Views\Client\_Delete.cshtml" />
+    <Content Include="Views\Client\CreateEditClient.cshtml" />
+    <Content Include="Views\Client\Index.cshtml" />
+    <Content Include="Views\Assessment\_AssessmentPartial.cshtml" />
+    <Content Include="Views\Reports\_BasicCriteria.cshtml" />
+    <Content Include="Views\ClientTreatment\_ClientTreatmentHistory.cshtml" />
+    <Content Include="Views\Shared\_NotificationPartial.cshtml" />
+    <Content Include="Views\ClientTreatment\Dispenser.cshtml" />
+    <Content Include="Views\ClientTreatment\_VerifyClientTreatment.cshtml" />
+    <Content Include="Views\ClientTreatment\_DispenserPartial.cshtml" />
+    <Content Include="Views\ClientTreatment\_VerifiedClientTreatmentPartial.cshtml" />
+    <Content Include="Views\Account\_CreateRole.cshtml" />
+    <Content Include="Views\Account\UserAccessLogs.cshtml" />
+    <Content Include="Views\Client\ClientHistory.cshtml" />
+    <Content Include="Views\ASSISTANTs\Create.cshtml" />
+    <Content Include="Views\ASSISTANTs\Delete.cshtml" />
+    <Content Include="Views\ASSISTANTs\Details.cshtml" />
+    <Content Include="Views\ASSISTANTs\Edit.cshtml" />
+    <Content Include="Views\ASSISTANTs\Index.cshtml" />
+    <Content Include="Views\SESSIONs\Create.cshtml" />
+    <Content Include="Views\SESSIONs\Delete.cshtml" />
+    <Content Include="Views\SESSIONs\Details.cshtml" />
+    <Content Include="Views\SESSIONs\Edit.cshtml" />
+    <Content Include="Views\SESSIONs\Index.cshtml" />
+    <Content Include="Views\SessionAssistant\Create.cshtml" />
+    <Content Include="Views\SessionAssistant\Delete.cshtml" />
+    <Content Include="Views\SessionAssistant\Details.cshtml" />
+    <Content Include="Views\SessionAssistant\Edit.cshtml" />
+    <Content Include="Views\SessionAssistant\Index.cshtml" />
+    <Content Include="Views\DISPENSERs\Create.cshtml" />
+    <Content Include="Views\DISPENSERs\Delete.cshtml" />
+    <Content Include="Views\DISPENSERs\Details.cshtml" />
+    <Content Include="Views\DISPENSERs\Edit.cshtml" />
+    <Content Include="Views\DISPENSERs\Index.cshtml" />
+    <Content Include="Views\DISPENSERs\DisplayClientDetails.cshtml" />
+    <Content Include="Views\SESSIONs\IndexPartial.cshtml" />
+    <Content Include="Views\SITEs\Create.cshtml" />
+    <Content Include="Views\SITEs\Delete.cshtml" />
+    <Content Include="Views\SITEs\Details.cshtml" />
+    <Content Include="Views\SITEs\Edit.cshtml" />
+    <Content Include="Views\SITEs\Index.cshtml" />
+    <Content Include="Views\SESSIONs\DispenserTreatmentTable.cshtml" />
+    <Content Include="Views\DISPENSERs\DispenserDetailsView.cshtml" />
+    <Content Include="Views\Reports\_MasterCriteria.cshtml" />
+    <Content Include="Views\ClientTreatment\PrintPrescription.cshtml" />
+    <Content Include="Views\RapidTest\Index.cshtml" />
+    <Content Include="Views\RapidTest\_ClientRapidTestPartial.cshtml" />
+    <Content Include="Views\RapidTest\CreateEditRapidTest.cshtml" />
+    <Content Include="Views\RapidTest\_Delete.cshtml" />
+    <Content Include="Views\ConfirmatoryTest\_ClientConfirmatoryTestPartial.cshtml" />
+    <Content Include="Views\ConfirmatoryTest\Index.cshtml" />
+    <Content Include="Views\ConfirmatoryTest\CreateEditConfirmatoryTest.cshtml" />
+    <Content Include="Views\ConfirmatoryTest\_Delete.cshtml" />
+    <Content Include="Views\FBCTest\Index.cshtml" />
+    <Content Include="Views\FBCTest\_ClientFBCTestPartial.cshtml" />
+    <Content Include="Views\FBCTest\CreateEditFBCTest.cshtml" />
+    <Content Include="Views\FBCTest\_Delete.cshtml" />
+    <Content Include="Views\LFTTest\Index.cshtml" />
+    <Content Include="Views\LFTTest\_ClientLFTTestPartial.cshtml" />
+    <Content Include="Views\LFTTest\CreateEditLFTTest.cshtml" />
+    <Content Include="Views\LFTTest\_Delete.cshtml" />
+    <Content Include="Views\UreaTest\_ClientUreaTestPartial.cshtml" />
+    <Content Include="Views\UreaTest\_Delete.cshtml" />
+    <Content Include="Views\UreaTest\CreateEditUreaTest.cshtml" />
+    <Content Include="Views\UreaTest\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MDAReports\DailyDispenserList.rdlc" />
+    <Content Include="MDAReports\BloodBorneDiseaseTestHistory.rdlc" />
+    <Content Include="MDAReports\TreatmentHistory.rdlc" />
+    <Content Include="MDAReports\SubstanceTestHistory.rdlc" />
+    <Content Include="MDAReports\MasterClientList.rdlc" />
+    <Content Include="MDAReports\DailyMedicationTotals.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MDAReports\PrintPrescription.rdlc" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>40498</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:40498/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
